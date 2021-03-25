@@ -1,11 +1,8 @@
 const axios = require('axios');
-const path = 'http://3.101.119.1/';
-
-
+const path = 'http://localhost:3001';
 
 module.exports = {
-
-    getReviews: (req, res, next) => {
+    getReview: (req, res, next) => {
         axios(path + req.url)
             .then(({ data }) => {
                 res.send(data);
@@ -17,8 +14,7 @@ module.exports = {
             })
     },
 
-
-    getReviewsMeta: (req, res, next) => {
+    postReview: (req, res, next) => {
         axios(path + req.url)
             .then(({ data }) => {
                 res.send(data);
@@ -30,32 +26,7 @@ module.exports = {
             })
     },
 
-
-    postReviews: (req, res, next) => {
-        axios(path + req.url)
-            .then(({ data }) => {
-                res.send(data);
-                next();
-            })
-            .catch((err) => {
-                res.status(400);
-                next();
-            })
-    },
-
-    updateHelpful: (req, res, next) => {
-        axios(path + req.url)
-            .then(({ data }) => {
-                res.send(data);
-                next();
-            })
-            .catch((err) => {
-                res.status(400);
-                next();
-            })
-    },
-
-    updateReport: (req, res, next) => {
+    putReview: (req, res, next) => {
         axios(path + req.url)
             .then(({ data }) => {
                 res.send(data);

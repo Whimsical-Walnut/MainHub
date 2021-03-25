@@ -4,10 +4,8 @@ const router = require('express').Router();
 
 router.get('/products/*', controller.products);
 //reviews API 
-router.get('/reviews', reviewController.getReviews)
-router.get('/reviews/meta', reviewController.getReviewsMeta)
-router.post('/reviews', reviewController.postReviews)
-router.put('/reviews/:review_id/report', reviewController.updateReport)
-router.put('/reviews/:review_id/helpful', reviewController.updateHelpful)
+router.get('/reviews/*', reviewController.getReview)
+router.post('/reviews/*', reviewController.postReview)
+router.put('/reviews/*', reviewController.putReview)
 
 module.exports = router;
